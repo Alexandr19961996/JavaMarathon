@@ -12,8 +12,12 @@ public class Task4 {
         int maxSum = 0;
         int index = 0;
         for (int i = 0; i < mass.length-2; i++) {
-            if (mass[i] + mass[i+1] + mass[i+2] > maxSum) {
-                maxSum = (mass[i] + mass[i+1] + mass[i+2]);
+            int result = 0;
+            for (int j = i; j <= i+2; j++) {
+                result += mass[j];
+            }
+            if (result > maxSum) {
+                maxSum = result;
                 index = i;
             }
         }

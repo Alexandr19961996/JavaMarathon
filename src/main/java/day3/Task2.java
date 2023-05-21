@@ -6,10 +6,10 @@ public class Task2 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         while (true) {
-            int divisible = sc.nextInt();
-            int divisor = sc.nextInt();
+            double divisible = sc.nextDouble();
+            double divisor = sc.nextDouble();
             if (divisor == 0) break;
-            else System.out.println((double) divisible / divisor);
+            else System.out.println(divisible / divisor);
         }
     }
 }

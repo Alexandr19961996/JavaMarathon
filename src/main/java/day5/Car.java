@@ -5,22 +5,27 @@ public class Car {
     private String color;
     private int yearOfRelease;
 
-    public void setModel (String model){
+    public void setModel(String model) {
         this.model = model;
     }
-    public void setColor(String color){
+
+    public void setColor(String color) {
         this.color = color;
     }
-    public void setYearOfRelease (int yearOfRelease){
+
+    public void setYearOfRelease(int yearOfRelease) {
         this.yearOfRelease = yearOfRelease;
     }
-    public String getModel(){
+
+    public String getModel() {
         return model;
     }
-    public String getColor(){
+
+    public String getColor() {
         return color;
     }
-    public int getYearOfRelease(){
+
+    public int getYearOfRelease() {
         return yearOfRelease;
     }
 }

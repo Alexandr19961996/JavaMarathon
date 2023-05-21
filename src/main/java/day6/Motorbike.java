@@ -1,7 +1,5 @@
 package day6;
 
-import java.sql.SQLOutput;
-
 public class Motorbike {
     private String model;
     private String color;
@@ -11,18 +9,6 @@ public class Motorbike {
         this.model = model;
         this.color = color;
         this.yearOfRelease = yearOfRelease;
-    }
-
-    public String getModel() {
-        return model;
-    }
-
-    public String getColor() {
-        return color;
-    }
-
-    public int getYearOfRelease() {
-        return yearOfRelease;
     }
 
     public void info() {

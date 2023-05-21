@@ -5,23 +5,13 @@ import java.util.Random;
 public class Teacher {
     private String name;
     private String subject;
-    public Teacher (String name, String subject){
+
+    public Teacher(String name, String subject) {
         this.name = name;
         this.subject = subject;
     }
-    public void setName(String name) {
-        this.name = name;
-    }
-    public void setSubject(String subject) {
-        this.subject = subject;
-    }
-    public String getName() {
-        return name;
-    }
-    public String getSubject() {
-        return subject;
-    }
-    public void evaluate (Student student){
+
+    public void evaluate(Student student) {
         Random random = new Random();
         int minAssessment = 2;
         int maxAssessment = 5;
@@ -45,6 +35,6 @@ public class Teacher {
                 break;
             }
         }
-        System.out.println("Преподаватель " + getName() + " оценил студента с именем " + student.getName() + " по предмету " + getSubject() + " на оценку " + assessment + ".");
+        System.out.println("Преподаватель " + name + " оценил студента с именем " + student.getName() + " по предмету " + subject + " на оценку " + assessment + ".");
     }
 }

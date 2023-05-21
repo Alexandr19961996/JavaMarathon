@@ -7,7 +7,7 @@ public class Task1 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int length = sc.nextInt();
-        int [] mass = new int[length];
+        int[] mass = new int[length];
         Random rand = new Random();
         for (int i = 0; i < length; i++) {
             mass[i] = rand.nextInt(11);
@@ -17,7 +17,7 @@ public class Task1 {
         int countOfEvenNumbers = 0;
         int countOfOddNumbers = 0;
         int sumNumbers = 0;
-        for (int value: mass) {
+        for (int value : mass) {
             System.out.print(value + " ");
             if (value > 8) countOfNumbersMoreEight++;
             if (value == 1) countOfNumbersEqualsOne++;

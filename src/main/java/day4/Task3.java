@@ -6,7 +6,7 @@ public class Task3 {
     public static void main(String[] args) {
         int m = 12;
         int n = 8;
-        int [][] mass = new int [m][n];
+        int[][] mass = new int[m][n];
         Random rand = new Random();
         for (int i = 0; i < m; i++) {
             for (int j = 0; j < n; j++) {

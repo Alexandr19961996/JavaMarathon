@@ -6,10 +6,10 @@ public class Task1 {
 //        1 способ - конкатенация через обычный класс String
 
         long startTimeOne = System.currentTimeMillis();
-        StringBuilder lineOne = new StringBuilder("0");
+        String lineOne = "0";
         for (int i = 1; i <= 20000; i++) {
-            lineOne.append(" ");
-            lineOne.append(i);
+            lineOne += " ";
+            lineOne += i;
         }
         long stopTimeOne = System.currentTimeMillis();
         System.out.println("Длительность работы, в мс.: " + (stopTimeOne - startTimeOne));

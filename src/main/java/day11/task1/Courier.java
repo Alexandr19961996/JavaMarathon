@@ -4,6 +4,9 @@ public class Courier implements Worker {
     private int salary;
     private boolean isPayed;
     private final Warehouse warehouse;
+    private static final int SALARY_AMOUNT = 100;
+    private static final int BONUS = 50000;
+    private static final int NUMBER_OF_ORDERS_TO_RECEIVE_THE_BONUS = 10000;
 
     public Courier(Warehouse warehouse) {
         this.warehouse = warehouse;
@@ -21,16 +24,15 @@ public class Courier implements Worker {
     }
 
     public int doWork() {
-        int allOrders = warehouse.getCountDeliveredOrders();
-        warehouse.setCountDeliveredOrders(allOrders + 1);
-        return salary += 100;
+        warehouse.increaseCountDeliveredOrdersByOne();
+        return salary += SALARY_AMOUNT;
     }
 
     public int bonus() {
-        if (warehouse.getCountDeliveredOrders() < 10000) {
+        if (warehouse.getCountDeliveredOrders() < NUMBER_OF_ORDERS_TO_RECEIVE_THE_BONUS) {
             System.out.println("Бонус пока не доступен");
-        } else if (!isPayed || warehouse.getCountDeliveredOrders() == 10000) {
-            salary += 50000;
+        } else if (!isPayed || warehouse.getCountDeliveredOrders() == NUMBER_OF_ORDERS_TO_RECEIVE_THE_BONUS) {
+            salary += BONUS;
             isPayed = true;
         } else {
             System.out.println("Бонус уже был выплачен");

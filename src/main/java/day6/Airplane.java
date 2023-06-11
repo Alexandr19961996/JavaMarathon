@@ -15,6 +15,10 @@ public class Airplane {
         this.fuel = 0;
     }
 
+    public int getFuel() {
+        return fuel;
+    }
+
     public void setYear(int year) {
         this.year = year;
     }

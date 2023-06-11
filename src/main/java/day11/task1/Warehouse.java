@@ -20,6 +20,14 @@ public class Warehouse {
         return countDeliveredOrders;
     }
 
+    public void increaseCountPickedOrdersByOne() {
+        setCountPickedOrders(getCountPickedOrders() + 1);
+    }
+
+    public void increaseCountDeliveredOrdersByOne() {
+        setCountDeliveredOrders(getCountDeliveredOrders() + 1);
+    }
+
     @Override
     public String toString() {
         return "Количество собранных заказов: " + countPickedOrders + "; количество доставленных заказов: " + countDeliveredOrders;

@@ -5,6 +5,10 @@ public class Picker implements Worker {
     private boolean isPayed;
     private final Warehouse warehouse;
 
+    private static final int SALARY_AMOUNT = 80;
+    private static final int BONUS = 70000;
+    private static final int NUMBER_OF_ORDERS_TO_RECEIVE_THE_BONUS = 10000;
+
     public Picker(Warehouse warehouse) {
         this.warehouse = warehouse;
     }
@@ -21,16 +25,15 @@ public class Picker implements Worker {
     }
 
     public int doWork() {
-        int allOrders = warehouse.getCountPickedOrders();
-        warehouse.setCountPickedOrders(allOrders + 1);
-        return salary += 80;
+        warehouse.increaseCountPickedOrdersByOne();
+        return salary += SALARY_AMOUNT;
     }
 
     public int bonus() {
-        if (warehouse.getCountPickedOrders() < 10000) {
+        if (warehouse.getCountPickedOrders() < NUMBER_OF_ORDERS_TO_RECEIVE_THE_BONUS) {
             System.out.println("Бонус пока не доступен");
-        } else if (!isPayed || warehouse.getCountPickedOrders() == 10000) {
-            salary += 70000;
+        } else if (!isPayed || warehouse.getCountPickedOrders() == NUMBER_OF_ORDERS_TO_RECEIVE_THE_BONUS) {
+            salary += BONUS;
             isPayed = true;
         } else {
             System.out.println("Бонус уже был выплачен");

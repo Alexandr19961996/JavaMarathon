@@ -19,7 +19,7 @@ public class MusicBand {
 
     public static void transferMembers(MusicBand groupA, MusicBand groupB) {
         groupB.groupMembers.addAll(groupA.groupMembers);
-        groupA.groupMembers.removeAll(groupA.groupMembers);
+        groupA.groupMembers.clear();
     }
 
     public void printMembers() {

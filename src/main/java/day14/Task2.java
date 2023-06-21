@@ -7,13 +7,13 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Task2 {
-    public static void main(String[] args) throws FileNotFoundException {
+    public static void main(String[] args) {
         System.out.println(parseFileToStringList(new File("people")));
     }
 
-    public static List<String> parseFileToStringList(File file) throws FileNotFoundException {
-        List<String> list = new ArrayList<>();
+    public static List<String> parseFileToStringList(File file) {
         try {
+            List<String> list = new ArrayList<>();
             Scanner scanner = new Scanner(file);
             while (scanner.hasNextLine()) {
                 list.add(scanner.nextLine());
@@ -21,12 +21,15 @@ public class Task2 {
             for (String value : list) {
                 String[] mass = value.split(" ");
                 if (Integer.parseInt(mass[1]) < 0) {
-                    throw new RuntimeException("Некорректный входной файл");
+                    throw new RuntimeException();
                 }
             }
+            return list;
         } catch (FileNotFoundException e) {
-            throw new FileNotFoundException("Файл не найден");
+            System.out.println("Файл не найден");
+        } catch (RuntimeException e) {
+            System.out.println("Некорректный входной файл");
         }
-        return list;
+        return null;
     }
 }

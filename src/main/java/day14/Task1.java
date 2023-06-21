@@ -5,11 +5,11 @@ import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 public class Task1 {
-    public static void main(String[] args) throws FileNotFoundException {
+    public static void main(String[] args) {
         printSumDigits(new File("numbers"));
     }
 
-    public static void printSumDigits(File file) throws FileNotFoundException {
+    public static void printSumDigits(File file) {
         try {
             Scanner scanner = new Scanner(file);
             double sum = 0;
@@ -19,11 +19,13 @@ public class Task1 {
                 count++;
             }
             if (count != 10) {
-                throw new RuntimeException("Некорректный входной файл");
+                throw new RuntimeException();
             }
             System.out.println(sum);
         } catch (FileNotFoundException e) {
-            throw new FileNotFoundException("Файл не найден");
+            System.out.println("Файл не найден");
+        } catch (RuntimeException e) {
+            System.out.println("Некорректный входной файл");
         }
     }
 }

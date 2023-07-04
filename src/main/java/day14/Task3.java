@@ -18,14 +18,15 @@ public class Task3 {
             while (scanner.hasNextLine()) {
                 String[] mass = scanner.nextLine().split(" ");
                 if (Integer.parseInt(mass[1]) < 0) {
-                    throw new RuntimeException();
+                    throw new IllegalArgumentException();
                 }
                 list.add(new Person(mass[0], Integer.parseInt(mass[1])));
             }
+            scanner.close();
             return list;
         } catch (FileNotFoundException e) {
             System.out.println("Файл не найден");
-        } catch (RuntimeException e) {
+        } catch (IllegalArgumentException e) {
             System.out.println("Некорректный входной файл");
         }
         return null;

@@ -4,8 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class User {
-    private final String username;
-    private final List<User> listOfUsersSubscription;
+    private String username;
+    private List<User> listOfUsersSubscription;
 
     public User(String username) {
         this.username = username;
@@ -29,7 +29,7 @@ public class User {
     }
 
     public boolean isFriend(User user) {
-        return user.isSubscribed(this);
+        return this.isSubscribed(user) && user.isSubscribed(this);
     }
 
     public void sendMessage(User user, String text) {

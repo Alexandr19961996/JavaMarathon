@@ -19,12 +19,13 @@ public class Task1 {
                 count++;
             }
             if (count != 10) {
-                throw new RuntimeException();
+                throw new IllegalArgumentException();
             }
+            scanner.close();
             System.out.println(sum);
         } catch (FileNotFoundException e) {
             System.out.println("Файл не найден");
-        } catch (RuntimeException e) {
+        } catch (IllegalArgumentException e) {
             System.out.println("Некорректный входной файл");
         }
     }

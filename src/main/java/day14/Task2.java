@@ -21,13 +21,14 @@ public class Task2 {
             for (String value : list) {
                 String[] mass = value.split(" ");
                 if (Integer.parseInt(mass[1]) < 0) {
-                    throw new RuntimeException();
+                    throw new IllegalArgumentException();
                 }
             }
+            scanner.close();
             return list;
         } catch (FileNotFoundException e) {
             System.out.println("Файл не найден");
-        } catch (RuntimeException e) {
+        } catch (IllegalArgumentException e) {
             System.out.println("Некорректный входной файл");
         }
         return null;

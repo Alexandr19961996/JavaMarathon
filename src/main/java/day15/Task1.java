@@ -16,7 +16,7 @@ public class Task1 {
             while (scanner.hasNextLine()) {
                 String[] mass = scanner.nextLine().split(";");
                 if (mass.length != 3) {
-                    throw new RuntimeException();
+                    throw new IllegalArgumentException();
                 }
                 if (Integer.parseInt(mass[2]) == 0) {
                     printWriter.println(mass[0] + ", " + mass[1] + ", " + mass[2]);
@@ -25,7 +25,7 @@ public class Task1 {
             printWriter.close();
         } catch (FileNotFoundException e) {
             System.out.println("Файл не найден");
-        } catch (RuntimeException e) {
+        } catch (IllegalArgumentException e) {
             System.out.println("Некорректный входной файл");
         }
     }
